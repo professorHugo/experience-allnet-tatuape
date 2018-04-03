@@ -1,0 +1,11 @@
+@media (min-width:1024px){
+        .submitLogin::after{
+                content: "Entrar";
+        }
+       
+}
+@media (max-width:1023px){
+        .submitLogin::after{
+                content: url('../img/login.png');
+        }
+}
