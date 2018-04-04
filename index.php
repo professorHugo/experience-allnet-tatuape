@@ -14,13 +14,6 @@ if (isset($_POST['CadastrarAluno'])) {
 <html lang="pt-BR">
     <head>
         <?php include 'parts/head.php'; ?>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	  (adsbygoogle = window.adsbygoogle || []).push({
-	    google_ad_client: "ca-pub-7918214509077495",
-	    enable_page_level_ads: true
-	  });
-	</script>
     </head>
     <body>
         <div class="container">
@@ -35,7 +28,7 @@ if (isset($_POST['CadastrarAluno'])) {
                             $Login['remember'] = $_POST['lembrar'];
 
                             /* Lembrar usuario
-                              if(isset($_POST['Remember'])){
+                              if(isset($_POST['remember'])){
                               $Login['remember'] = $_POST['lembrar'];
                               }
                              * */
@@ -45,9 +38,9 @@ if (isset($_POST['CadastrarAluno'])) {
                             $ExeQrVerificarAtivacao = mysql_query($QueryVerificarAtivacao);
 
                             if (mysql_num_rows($ExeQrVerificarAtivacao) < 1) {
-                                
+
                                 include_once 'parts/EnviarEmailNovamente.php';
-                                
+
                                 session_abort();
                                 ?>
                                 <script>

@@ -2,7 +2,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="<?php echo $SITEDESC; ?>">
-<meta name="author" content="Agência Next 2 You - Developed by <?php echo $Developer; ?>">
+<meta name="author" content="Agência Next 2 You - Developed by <?php echo $SUPORTNAME; ?>">
 <title><?php echo $SITENAME . $Version; ?></title>
 <!-- Bootstrap Core CSS -->
 <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
