@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `permissao` int(11) DEFAULT '0' COMMENT '0 para alunos e 1 para prof 2 para adm',
   `ativado` int(1) DEFAULT '1' COMMENT '0 Para inativo, 1 para ativo',
   `foto` varchar(250) COLLATE utf8_general_mysql500_ci DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8 COLLATE=utf8_general_mysql500_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_mysql500_ci;
 
 --
 -- Extraindo dados da tabela `usuarios`

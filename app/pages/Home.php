@@ -43,17 +43,18 @@
             $QueryBuscarAulas = "SELECT * FROM aulas WHERE numero_aula = $AulaAssistida1 OR numero_aula = $AulaAssistida2 OR numero_aula = $AulaAssistida3 OR numero_aula = $AulaAssistida4 OR numero_aula = $AulaAssistida5 OR numero_aula = $AulaAssistida6 OR numero_aula = $AulaAssistida7 OR numero_aula = $AulaAssistida8";
             $ExeQrBuscarAulas = mysql_query($QueryBuscarAulas);
 
-            $DadosAulas[numero_aula];
+
 
             if (mysql_num_rows($ExeQrBuscarAulas)) {
 
                 while ($AulasAssistidas = mysql_fetch_assoc($ExeQrBuscarAulas)) {
+                  // echo $AulasAssistidas['numero_aula'];
                     ?>
                     <article class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="margin-bottom: 30px">
-                        <a href="?page=Presentations&Aula=<?php echo $AulasAssistidas[numero_aula] ?>">
+                        <a href="?page=Presentations&Aula=<?php echo $AulasAssistidas['numero_aula'] ?>">
                             <div class="form-group" style="min-height: 120px;margin:0 auto;">
-                                <img src="../img/buttons/<?php echo $AulasAssistidas[numero_aula] ?>.png" class="img-responsive img-rounded" style="max-height: 70px;max-width: 100%;margin: 0 auto 10px;">
-                                <span class="btn btn-default form-control" style="width: 100%;font-size: 12px"><?php echo $AulasAssistidas[titulo_aula] ?></span>
+                                <img src="../img/buttons/<?php echo $AulasAssistidas['numero_aula'] ?>.png" class="img-responsive img-rounded" style="max-height: 70px;max-width: 100%;margin: 0 auto 10px;">
+                                <span class="btn btn-default form-control" style="width: 100%;font-size: 12px"><?php echo $AulasAssistidas['titulo_aula'] ?></span>
                             </div>
                         </a>
                     </article>
