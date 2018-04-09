@@ -12,7 +12,27 @@ if(isset($_POST['atualizar_questao'])){
     echo "Pergunta atualizada, novo conteúdo: " . $ConteudoPergunta;
   }
 }
+if(isset($_POST['atualizar_resposta'])){
+  // Update da Resposta Correta
+   "Questão: " . $Questao = $_POST['questao'];
+   "<br>Resposta Correta: " . $RespostaCoreta = $_POST['resposta_correta'];
+   "<br>Resposta Errada 1: " . $RespostaErrada1 = $_POST['resposta_errada1'];
+   "<br>Resposta Errada 2: " . $RespostaErrada2 = $_POST['resposta_errada2'];
+   "<br>Resposta Errada 3: " . $RespostaErrada3 = $_POST['resposta_errada3'];
+   "<br><br>" . $QueryUpdateRespostaCorreta = "UPDATE questoes_provas SET resposta_correta = '$RespostaCoreta', resposta_errada1 = '$RespostaErrada1', resposta_errada2 = '$RespostaErrada2', resposta_errada3 = '$RespostaErrada3' WHERE id_prova = $Questao";
+   "<br>";
+  $ExeQrUpdateRespostaCorreta = mysql_query($QueryUpdateRespostaCorreta);
 
+  if($ExeQrUpdateRespostaCorreta){
+    ?>
+    Respostas atuaizadas <br>
+    <b>Resposta correta: </b> <?php echo $RespostaCoreta;?><br>
+    <b>Resposta errada 1: </b> <?php echo $RespostaErrada1;?><br>
+    <b>Resposta errada 2: </b> <?php echo $RespostaErrada2;?><br>
+    <b>Resposta errada 3: </b> <?php echo $RespostaErrada3;?><br>
+    <?php
+  }
+}
 
   $QueryBuscarAulas = "SELECT * FROM aulas";
   $ExeQrBuscarAulas = mysql_query($QueryBuscarAulas);
@@ -31,51 +51,16 @@ while($returnAulasCurso = mysql_fetch_assoc($ExeQrBuscarAulas)){
 }
 if(isset($_GET['Aula'])){
   $AulaProva = $_GET['Aula'];
-  echo $PermLogado;
   if($PermLogado == "Administrador"){
-    $QueryBuscarQuestoesProvas = "SELECT * FROM questoes_provas WHERE modulo_prova = $AulaProva";
-    $ExeQrBuscarQuestoesProvas = mysql_query($QueryBuscarQuestoesProvas);
 
-    while($ResBuscarQuestoes = mysql_fetch_assoc($ExeQrBuscarQuestoesProvas)){
-      ?>
-      <form action="#" method="post">
-        <div class="form-group">
-          <div class="col-md-10">
-            <input type="text" name="conteudo_pergunta" class="form-control" value="<?php echo $ResBuscarQuestoes['pergunta']?>">
-            <input type="hidden" name="questao" value="<?php echo $ResBuscarQuestoes['id_prova']?>">
-          </div>
-          <div class="col-md-2">
-            <button type="submit" name="atualizar_questao" class="btn btn-success">Atualizar</button>
-          </div>
-        </div>
-      </form>
-      <?php
-    }
+    include_once 'parts/perguntasEditar.php';
+    
   }else {
-    $QueryBuscarQuestoesProvas = "SELECT * FROM questoes_provas WHERE modulo_prova = $AulaProva";
-    $ExeQrBuscarQuestoesProvas = mysql_query($QueryBuscarQuestoesProvas);
-    ?>
-    <form action="#" method="post">
-    <?php
-    while($ResBuscarQuestoes = mysql_fetch_assoc($ExeQrBuscarQuestoesProvas)){
-      ?>
-      <div class="form-group">
-        <?php echo $ResBuscarQuestoes['pergunta']?>
-      </div>
-      <?php
-    }
-    ?>
-    </form>
-    <?php
+
+    include_once 'parts/perguntasAluno.php';
+
   }
 }
 
 ?>
 <div class="clearfix"></div>
-<h3>Todas as questões</h3>
-<hr style="border-color:#333">
-<?php
-    ?>
-    Exibir apenas as avaliações para o aluno
-    <?php
-?>
