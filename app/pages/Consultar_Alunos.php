@@ -1,10 +1,9 @@
 <?php
 #Alterar cadastro do aluno#
 if (isset($_POST['UpdateAluno'])) {
-    
+
 } else {
 
-    $QueryBuscarAulasTodosUsuarios = "SELECT * FROM usuarios";
     ?>
     <form action="?page=Consultar_Alunos" method="post" class="form-inline">
         <div class="form-group col-xs-11 col-sm-4 col-md-3 col-lg-3">
@@ -26,6 +25,7 @@ if (isset($_POST['UpdateAluno'])) {
             <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search text-success"></i></button>
         </div>
     </form>
+
     <?php
     if (isset($_POST['MatriculaDoAluno'])) {
         $Matricula = $_POST['MatriculaDoAluno'];

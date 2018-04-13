@@ -1,13 +1,13 @@
 <h4>Dados do Aluno:</h4>
 <div class="form-group col-md-5">
-    <label for="nome_mae">Nome:</label>
-    <input type="tel" name="NomeCompleto" id="nome_mae" class="form-control" value="<?php echo $ReturnDados['nome'] ?>">
+    <label for="nome_aluno<?php echo $ReturnDados[matricula]?>">Nome:</label>
+    <input type="tel" name="NomeCompleto" id="nome_aluno<?php echo $ReturnDados['matricula']?>" class="form-control" value="<?php echo $ReturnDados['nome'] ?>">
 </div>
 <div class="form-group col-md-2">
-    <label for="Idade">Idade:</label>
-    <select name="Idade" id="Idade" class="form-control" value="<?php echo $ReturnDados['idade'] ?>">
+    <label for="idade<?php echo $ReturnDados[matricula]?>">Idade:</label>
+    <select name="Idade" id="idade<?php echo $ReturnDados['matricula']?>" class="form-control" value="<?php echo $ReturnDados['idade'] ?>">
         <?php
-        for ($iIdade = 12; $iIdade <= 70; $iIdade++) {
+        for ($iIdade = 12; $iIdade <= 80; $iIdade++) {
             ?>
             <option value="<?php echo $iIdade ?>"><?php echo $iIdade ?></option>
             <?php

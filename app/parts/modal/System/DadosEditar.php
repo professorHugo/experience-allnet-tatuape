@@ -11,12 +11,12 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active">
-                                <a href="#dados_aluno<?php echo $ReturnDados['matricula'] ?>" aria-controls="dados_pagamento<?php echo $ReturnDados[matricula] ?>" role="tab" data-toggle="tab">
+                                <a href="#dados_aluno<?php echo $ReturnDados['matricula'] ?>" aria-controls="dados_pagamento<?php echo $ReturnDados['matricula'] ?>" role="tab" data-toggle="tab">
                                     Dados Aluno
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a href="#dados_aula<?php echo $ReturnDados['matricula'] ?>" aria-controls="dados_pagamento<?php echo $ReturnDados[matricula] ?>" role="tab" data-toggle="tab">
+                                <a href="#dados_aula<?php echo $ReturnDados['matricula'] ?>" aria-controls="dados_pagamento<?php echo $ReturnDados['matricula'] ?>" role="tab" data-toggle="tab">
                                     Aulas
                                 </a>
                             </li>

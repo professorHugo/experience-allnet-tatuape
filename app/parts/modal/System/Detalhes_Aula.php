@@ -52,13 +52,13 @@ if (mysql_num_rows($ExeQrBuscarAulas2) == 0) {
             <article class="col-md-3" style="margin-bottom: 30px">
                 <a href="#">
                     <div class="form-group" style="min-height: 120px;margin:0 auto;">
-                        <img src="../img/buttons/<?php echo $AulasAssistidas[numero_aula] ?>.png" class="img-responsive img-rounded" style="max-height: 70px;max-width: 100%;margin: 0 auto 10px;">
-                        <span class="btn btn-default form-control"><?php echo $AulasAssistidas[titulo_aula] ?></span>
+                        <img src="../img/buttons/<?php echo $AulasAssistidas['numero_aula'] ?>.png" class="img-responsive img-rounded" style="max-height: 70px;max-width: 100%;margin: 0 auto 10px;">
+                        <span class="btn btn-default form-control"><?php echo $AulasAssistidas['titulo_aula'] ?></span>
                     </div>
                 </a>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="ConfirmarAula" value="?page=Consultar_alunos&Aluno=<?php echo $ReturnDados['matricula'] ?>&Aula=<?php echo $AulasAssistidas[numero_aula] ?>">Assistiu
+                        <input type="checkbox" name="ConfirmarAula" value="?page=Consultar_alunos&Aluno=<?php echo $ReturnDados['matricula'] ?>&Aula=<?php echo $AulasAssistidas['numero_aula'] ?>">Assistiu
                     </label>
                 </div>
             </article>
@@ -71,13 +71,13 @@ if (mysql_num_rows($ExeQrBuscarAulas2) == 0) {
         <article class="col-md-3" style="margin-bottom: 30px">
             <a href="#">
                 <div class="form-group" style="min-height: 120px;margin:0 auto;">
-                    <img src="../img/buttons/<?php echo $AulasAssistidas[numero_aula] ?>.png" class="img-responsive img-rounded" style="max-height: 70px;max-width: 100%;margin: 0 auto 10px;">
-                    <span class="btn btn-default form-control"><?php echo $AulasAssistidas[titulo_aula] ?></span>
+                    <img src="../img/buttons/<?php echo $AulasAssistidas['numero_aula'] ?>.png" class="img-responsive img-rounded" style="max-height: 70px;max-width: 100%;margin: 0 auto 10px;">
+                    <span class="btn btn-default form-control"><?php echo $AulasAssistidas['titulo_aula'] ?></span>
                 </div>
             </a>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="ConfirmarAula" value="?page=Consultar_alunos&Aluno=<?php echo $ReturnDados['matricula'] ?>&Aula=<?php echo $AulasAssistidas[numero_aula] ?>">Assistiu
+                    <input type="checkbox" name="ConfirmarAula" value="?page=Consultar_alunos&Aluno=<?php echo $ReturnDados['matricula'] ?>&Aula=<?php echo $AulasAssistidas['numero_aula'] ?>">Assistiu
                 </label>
             </div>
         </article>

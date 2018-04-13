@@ -7,7 +7,7 @@
                 <h4 class="modal-title">Aluno Cadastrado com sucesso</h4>
             </div>
             <div class="modal-body">
-                <p>O aluno <b><?php echo $Cadastrar[nome] ?></b> foi cadastrado no sistema de acompanhamento do <b>Experience</b></p>
+                <p>O aluno <b><?php echo $Cadastrar['nome'] ?></b> foi cadastrado no sistema de acompanhamento do <b>Experience</b></p>
             </div>
             <div class="modal-footer">
                 <a href="?page=Cadastrar_Aluno" type="button" class="btn btn-default" data-dismiss="modal"> Fechar </a>

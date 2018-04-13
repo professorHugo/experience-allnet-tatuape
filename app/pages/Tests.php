@@ -5,31 +5,24 @@
 if(isset($_POST['atualizar_questao'])){
   echo "Questão: " . $Questao = $_POST['questao'];
   echo "<br>Conteudo da pergunta: " . $ConteudoPergunta = $_POST['conteudo_pergunta'];
-  echo "<br>" . $QueryUpdateQuestao = "UPDATE questoes_provas SET pergunta = '$ConteudoPergunta' WHERE id_prova = $Questao";
+  echo "<br>" . $QueryUpdateQuestao = "UPDATE questoes_provas SET pergunta_prova = '$ConteudoPergunta' WHERE id_prova = $Questao";
   $ExeQrUpdateQuestao = mysql_query($QueryUpdateQuestao);
 
-  if($ExeQrUpdateQuestao){
-    echo "Pergunta atualizada, novo conteúdo: " . $ConteudoPergunta;
-  }
-}
-if(isset($_POST['atualizar_resposta'])){
   // Update da Resposta Correta
-   "Questão: " . $Questao = $_POST['questao'];
-   "<br>Resposta Correta: " . $RespostaCoreta = $_POST['resposta_correta'];
-   "<br>Resposta Errada 1: " . $RespostaErrada1 = $_POST['resposta_errada1'];
-   "<br>Resposta Errada 2: " . $RespostaErrada2 = $_POST['resposta_errada2'];
-   "<br>Resposta Errada 3: " . $RespostaErrada3 = $_POST['resposta_errada3'];
-   "<br><br>" . $QueryUpdateRespostaCorreta = "UPDATE questoes_provas SET resposta_correta = '$RespostaCoreta', resposta_errada1 = '$RespostaErrada1', resposta_errada2 = '$RespostaErrada2', resposta_errada3 = '$RespostaErrada3' WHERE id_prova = $Questao";
-   "<br>";
+   echo "Questão: " . $Questao = $_POST['questao'];
+   echo "<br>Resposta Correta: " . $RespostaCoreta = $_POST['resposta_correta'];
+   echo "<br><br>" . $QueryUpdateRespostaCorreta = "UPDATE respostas_corretas SET resposta = '$RespostaCoreta' WHERE id = $Questao";
+   echo "<br>";
   $ExeQrUpdateRespostaCorreta = mysql_query($QueryUpdateRespostaCorreta);
 
   if($ExeQrUpdateRespostaCorreta){
     ?>
-    Respostas atuaizadas <br>
+    Resposta atuaizada <br>
     <b>Resposta correta: </b> <?php echo $RespostaCoreta;?><br>
-    <b>Resposta errada 1: </b> <?php echo $RespostaErrada1;?><br>
-    <b>Resposta errada 2: </b> <?php echo $RespostaErrada2;?><br>
-    <b>Resposta errada 3: </b> <?php echo $RespostaErrada3;?><br>
+    <?php
+  }else{
+    ?>
+    Erro: <b><?php echo mysql_error()?></b>
     <?php
   }
 }
@@ -54,7 +47,7 @@ if(isset($_GET['Aula'])){
   if($PermLogado == "Administrador"){
 
     include_once 'parts/perguntasEditar.php';
-    
+
   }else {
 
     include_once 'parts/perguntasAluno.php';

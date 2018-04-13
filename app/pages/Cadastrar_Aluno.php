@@ -3,16 +3,16 @@
 <?php
 if (isset($_POST['CadastrarAluno'])) {
     require '../cnf/config.php';
-    
-    $Cadastrar[matricula] = $_POST['matricula'];
-    $Cadastrar[matricula_md5] = md5($Cadastrar[matricula]);
-    $Cadastrar[nome] = $_POST['nome'];
-    $Cadastrar[idade] = $_POST['idade'];
-    $Cadastrar[senha] = 'experience';
-    $Cadastrar[senha_md5] = md5($Cadastrar[senha]);
-    
+
+    $Cadastrar['matricula'] = $_POST['matricula'];
+    $Cadastrar['matricula_md5'] = md5($Cadastrar['matricula']);
+    $Cadastrar['nome'] = $_POST['nome'];
+    $Cadastrar['idade'] = $_POST['idade'];
+    $Cadastrar['senha'] = 'experience';
+    $Cadastrar['senha_md5'] = md5($Cadastrar['senha']);
+
     $QueryCadastrarUsuario = "INSERT INTO usuarios(matricula,matricula_md5,senha,senha_md5,nome,idade,permissao) VALUES('$Cadastrar[matricula]','$Cadastrar[matricula_md5]','$Cadastrar[senha]','$Cadastrar[senha_md5]','$Cadastrar[nome]','$Cadastrar[idade]',0)";
-    
+
     $ExeQrCadastrarUsuario = mysql_query($QueryCadastrarUsuario);
 
     if (isset($ExeQrCadastrarUsuario)) {
